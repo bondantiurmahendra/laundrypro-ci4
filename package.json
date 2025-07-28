@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.10",
+    "flyonui": "^2.2.0",
+    "tailwindcss": "^4.0.0"
+  },
+  "name": "laundry",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "tw": "npx @tailwindcss/cli -i ./tw/i.css -o ./public/css/o.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,27 @@
+# ENVIRONTMENT 
+CI_ENVIRONMENT = production
+
+# DATABASE
+
+apiKey: "",
+authDomain: "",
+projectId: "",
+storageBucket: "",
+messagingSenderId: "",
+appId: "",
+measurementId: "G-R1RXG8SEYG"
+
+# URL
+app.baseURL = 'http://localhost:8080'
+
+
+# SMTP BREVO
+email.protocol = "smtp"
+email.SMTPHost = "smtp-relay.brevo.com"
+email.SMTPUser = "9014b4001@smtp-brevo.com"
+email.SMTPPass = "6RrIMZbUNnTvdHY8"
+email.SMTPPort = "587"
+email.SMTPCrypto = "tls"
+email.mailType = "html"
+email.charset = "UTF-8"
+email.Brand = "fc202d5y2290@student.devacademy.id"
