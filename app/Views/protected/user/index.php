@@ -94,20 +94,12 @@ function dashboardUser() {
       }
     },
 
-    formatTanggal(timestamp) {
-      if (!timestamp) return 'N/A';
-      let date;
-      if (typeof timestamp.toDate === 'function') {
-          date = timestamp.toDate();
-      } else if (typeof timestamp === 'string') {
-          date = new Date(timestamp);
-      } else {
-          return 'N/A';
-      }
-      if (isNaN(date.getTime())) {
-          return 'Invalid Date';
-      }
-      return date.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
+    formatTanggal(t) {
+      return new Date(t).toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric'
+      });
     },
 
   }
