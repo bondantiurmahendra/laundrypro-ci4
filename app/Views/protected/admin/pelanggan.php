@@ -37,13 +37,13 @@
         <thead
           class="border-b border-outline bg-surface-alt text-sm text-on-surface-strong dark:border-outline-dark dark:bg-surface-dark-alt dark:text-on-surface-dark-strong">
           <tr>
-            <th class="p-4">#</th>
-            <th class="p-4">Nama</th>
-            <th class="p-4">Email</th>
-            <th class="p-4">No. Telepon</th>
-            <th class="p-4">Total Pesanan</th>
-            <th class="p-4">Terdaftar</th>
-            <th class="p-4">Aksi</th>
+            <th class="p-4 text-nowrap">#</th>
+            <th class="p-4 text-nowrap">Nama</th>
+            <th class="p-4 text-nowrap">Email</th>
+            <th class="p-4 text-nowrap">No. Telepon</th>
+            <th class="p-4 text-nowrap">Total Pesanan</th>
+            <th class="p-4 text-nowrap">Terdaftar</th>
+            <th class="p-4 text-nowrap">Aksi</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-outline dark:divide-outline-dark">
@@ -56,14 +56,14 @@
               <td class="p-4" x-text="item.total_pesanan ?? 0 "></td>
               <td class="p-4" x-text="formatTanggal(item.createdAt)"></td>
               <td class="p-4 flex gap-2">
-                <button @click="editPelanggan(item)" class="text-blue-600 hover:text-blue-800 p-2 rounded transition"
+                <!-- <button @click="editPelanggan(item)" class="text-blue-600 hover:text-blue-800 p-2 rounded transition"
                   title="Edit">
                   <i class="fas fa-pen-to-square"></i>
-                </button>
-                <button @click="hapusPelanggan(item)" class="text-red-600 hover:text-red-800 p-2 rounded transition"
+                </button> -->
+                <!-- <button @click="hapusPelanggan(item)" class="text-red-600 hover:text-red-800 p-2 rounded transition"
                   title="Hapus">
                   <i class="fas fa-trash"></i>
-                </button>
+                </button> -->
                 <button @click="openEmailModal(item)" class="text-green-600 hover:text-green-800 p-2 rounded transition"
                   title="Kirim Email">
                   <i class="fas fa-envelope"></i>

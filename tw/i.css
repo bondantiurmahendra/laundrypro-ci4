@@ -505,10 +505,7 @@
     --color-on-danger: var(--color-black); 
   }
 
-  [data-theme="news"] {
-    /* Fonts */
-    --font-body: "Inter", sans-serif;
-    --font-title: "Merriweather", serif;
+  [data-theme="news"] { 
 
     /* Light Theme */
     --color-surface: var(--color-zinc-50);
@@ -595,7 +592,7 @@ button {
 }
 
 * {
-  @apply text-on-surface dark:text-on-surface-dark;
+  /* @apply text-on-surface dark:text-on-surface-dark; */
 }
 
 .hide-scrollbar {

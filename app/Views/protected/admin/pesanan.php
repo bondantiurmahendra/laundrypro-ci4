@@ -73,35 +73,35 @@
         <thead
           class="border-b border-outline bg-surface-alt text-sm text-on-surface-strong dark:border-outline-dark dark:bg-surface-dark-alt dark:text-on-surface-dark-strong">
           <tr>
-            <th class="p-4">#</th>
-            <th class="p-4">Nama</th>
-            <th class="p-4">Layanan</th>
-            <th class="p-4">Total</th>
-            <th class="p-4">Status</th>
-            <th class="p-4">Bayar</th>
-            <th class="p-4">Tgl Bayar</th>
-            <th class="p-4">Masuk</th>
-            <th class="p-4">Aksi</th>
+            <th class="p-4 text-nowrap">#</th>
+            <th class="p-4 text-nowrap">Nama</th>
+            <th class="p-4 text-nowrap">Layanan</th>
+            <th class="p-4 text-nowrap">Total</th>
+            <th class="p-4 text-nowrap">Status</th>
+            <th class="p-4 text-nowrap">Bayar</th>
+            <th class="p-4 text-nowrap">Tgl Bayar</th>
+            <th class="p-4 text-nowrap">Masuk</th>
+            <th class="p-4 text-nowrap">Aksi</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-outline dark:divide-outline-dark">
           <template x-for="(row, i) in filteredPesanan" :key="row.id">
             <tr>
-              <td class="p-4" x-text="i + 1"></td>
-              <td class="p-4" x-text="row.nama"></td>
-              <td class="p-4" x-text="row.layanan"></td>
-              <td class="p-4" x-text="formatRupiah(row.total)"></td>
-              <td class="p-4">
+              <td class="p-4 text-nowrap" x-text="i + 1"></td>
+              <td class="p-4 text-nowrap" x-text="row.nama"></td>
+              <td class="p-4 text-nowrap" x-text="row.layanan"></td>
+              <td class="p-4 text-nowrap" x-text="formatRupiah(row.total)"></td>
+              <td class="p-4 text-nowrap">
                 <span class="inline-block text-xs px-2 py-1 rounded-full font-medium text-white"
                   :class="badgeClass(row.status)" x-text="row.status"></span>
               </td>
-              <td class="p-4">
+              <td class="p-4 text-nowrap">
                 <span class="inline-block text-xs px-2 py-1 rounded-full font-medium text-white"
                   :class="badgeBayar(row.status_bayar)" x-text="row.status_bayar"></span>
               </td>
-              <td class="p-4" x-text="row.tgl_bayar ? formatTanggal(row.tgl_bayar) : '-'"></td>
-              <td class="p-4" x-text="formatTanggal(row.created_at)"></td>
-              <td class="p-4">
+              <td class="p-4 text-nowrap" x-text="row.tgl_bayar ? formatTanggal(row.tgl_bayar) : '-'"></td>
+              <td class="p-4 text-nowrap" x-text="formatTanggal(row.created_at)"></td>
+              <td class="p-4 text-nowrap">
                 <button @click="showUpdateModal(row)"
                   class="px-3 py-1.5 text-sm rounded bg-primary text-white hover:bg-primary/90 flex items-center gap-2">
                   <i class="fas fa-edit fa-sm"></i>

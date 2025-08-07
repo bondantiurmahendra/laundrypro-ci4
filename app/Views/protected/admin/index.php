@@ -53,29 +53,29 @@
                 <thead
                     class="border-b border-outline bg-surface-alt text-sm text-on-surface-strong dark:border-outline-dark dark:bg-surface-dark-alt dark:text-on-surface-dark-strong">
                     <tr>
-                        <th scope="col" class="p-4">ID Pesanan</th>
-                        <th scope="col" class="p-4">Nama Pelanggan</th>
-                        <th scope="col" class="p-4">Layanan</th>
-                        <th scope="col" class="p-4">Status</th>
-                        <th scope="col" class="p-4">Bayar</th>
-                        <th scope="col" class="p-4">Masuk</th>
+                        <th scope="col" class="p-4 text-nowrap">ID Pesanan</th>
+                        <th scope="col" class="p-4 text-nowrap">Nama Pelanggan</th>
+                        <th scope="col" class="p-4 text-nowrap">Layanan</th>
+                        <th scope="col" class="p-4 text-nowrap">Status</th>
+                        <th scope="col" class="p-4 text-nowrap">Bayar</th>
+                        <th scope="col" class="p-4 text-nowrap">Masuk</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-outline dark:divide-outline-dark">
                     <template x-for="transaction in latestTransactions" :key="transaction.id">
                         <tr>
-                            <td class="p-4" x-text="transaction.id.substring(0, 6)"></td>
-                            <td class="p-4" x-text="transaction.nama"></td>
-                            <td class="p-4" x-text="transaction.layanan"></td>
-                            <td class="p-4">
+                            <td class="p-4 text-nowrap" x-text="transaction.id.substring(0, 6)"></td>
+                            <td class="p-4 text-nowrap" x-text="transaction.nama"></td>
+                            <td class="p-4 text-nowrap" x-text="transaction.layanan"></td>
+                            <td class="p-4 text-nowrap">
                                 <span class="px-2 py-1 rounded-full text-xs font-semibold text-white"
                                     :class="badgeClass(transaction.status)" x-text="transaction.status"></span>
                             </td>
-                            <td class="p-4">
+                            <td class="p-4 text-nowrap">
                                 <span class="px-2 py-1 rounded-full text-xs font-semibold text-white"
                                     :class="badgeBayar(transaction.status_bayar)" x-text="transaction.status_bayar"></span>
                             </td>
-                            <td class="p-4" x-text="formatTanggal(transaction.created_at)"></td>
+                            <td class="p-4 text-nowrap" x-text="formatTanggal(transaction.created_at)"></td>
                         </tr>
                     </template>
                 </tbody>
@@ -163,8 +163,14 @@
 
                     // Total Pelanggan
                     const totalUsersSnapshot = await firebase.firestore().collection('users').get();
-                    this.stats[2].value = totalUsersSnapshot.size;
-                    console.log('Total Pelanggan fetched:', totalUsersSnapshot.size);
+                    const snapshot = totalUsersSnapshot.docs
+                        .map(doc => ({
+                            id: doc.id,
+                            ...doc.data()
+                        }))
+                        .filter(u => u.role === 'user')
+                    console.log("Pelanggan :", snapshot);
+                    this.stats[2].value = snapshot.length;
 
                     // Pendapatan Hari Ini (hanya yang LUNAS dan dibuat hari ini)
                     let totalRevenueToday = 0;
@@ -430,10 +436,10 @@
             },
             badgeBayar(status) {
                 return {
-                    'Lunas': 'bg-green-500 dark:bg-green-700',
-                    'Belum Bayar': 'bg-red-500 dark:bg-red-700',
-                    'Pending': 'bg-yellow-400 dark:bg-yellow-700',
-                }[status] || 'bg-gray-400 dark:bg-gray-700';
+                    'Lunas': 'bg-green-500 text-nowrap dark:bg-green-700',
+                    'Belum Bayar': 'bg-red-500 text-nowrap dark:bg-red-700',
+                    'Pending': 'bg-yellow-400 text-nowrap dark:bg-yellow-700',
+                }[status] || 'bg-gray-400 text-nowrap dark:bg-gray-700';
             },
         }
     }

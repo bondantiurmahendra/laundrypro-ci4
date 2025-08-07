@@ -97,28 +97,28 @@
         <thead
           class="border-b border-outline bg-surface-alt text-sm text-on-surface-strong dark:border-outline-dark dark:bg-surface-dark-alt dark:text-on-surface-dark-strong">
           <tr>
-            <th class="p-4">#</th>
-            <th class="p-4">Nama</th>
-            <th class="p-4">Jenis</th>
-            <th class="p-4">Harga</th>
-            <th class="p-4">Estimasi</th>
-            <th class="p-4">Status</th>
-            <th class="p-4">Aksi</th>
+            <th class="text-nowrap p-4">#</th>
+            <th class="text-nowrap p-4">Nama</th>
+            <th class="text-nowrap p-4">Jenis</th>
+            <th class="text-nowrap p-4">Harga</th>
+            <th class="text-nowrap p-4">Estimasi</th>
+            <th class="text-nowrap p-4">Status</th>
+            <th class="text-nowrap p-4">Aksi</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-outline dark:divide-outline-dark">
           <template x-for="(item, index) in filteredLayanan" :key="item.id">
             <tr>
-              <td class="p-4" x-text="index + 1"></td>
-              <td class="p-4" x-text="item.nama"></td>
-              <td class="p-4" x-text="item.jenis"></td>
-              <td class="p-4" x-text="formatHarga(item.harga, item.satuan)"></td>
-              <td class="p-4" x-text="item.estimasi"></td>
-              <td class="p-4">
+              <td class="text-nowrap p-4" x-text="index + 1"></td>
+              <td class="text-nowrap p-4" x-text="item.nama"></td>
+              <td class="text-nowrap p-4" x-text="item.jenis"></td>
+              <td class="text-nowrap p-4" x-text="formatHarga(item.harga, item.satuan)"></td>
+              <td class="text-nowrap p-4" x-text="item.estimasi"></td>
+              <td class="text-nowrap p-4">
                 <span class="inline-block text-xs px-2 py-1 rounded-full font-medium text-white"
                   :class="getStatusClass(item.status)" x-text="getStatusText(item.status)"></span>
               </td>
-              <td class="p-4 flex gap-2">
+              <td class="text-nowrap p-4 flex gap-2">
                 <button @click="openEditModal(item)" class="text-blue-600 hover:text-blue-800 p-2 rounded transition"
                   title="Edit">
                   <i class="fas fa-pen-to-square"></i>
