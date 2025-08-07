@@ -71,6 +71,7 @@ Kontribusi sangat terbuka! Silakan fork repo ini, buat branch baru, dan ajukan p
 
 - Email: fc202d5y2290@student.devacademy.id
 - Developer: Jack Kolor
+- https://github.com/alhifnywahid/
 
 ---
 
